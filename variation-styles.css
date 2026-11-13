@@ -89,3 +89,18 @@ body{margin:0;background:#f0f0f0;color:var(--ink);font-family:Meiryo,"Hiragino K
 .campaign-banner__brand{display:inline-block;margin:0;padding:.35em .9em;border-radius:20px;background:#155297;color:#fff;font-size:clamp(12px,2.5vw,17px)}
 .offer__illustration{display:grid;place-items:center;min-height:clamp(105px,24vw,160px);padding:4%;border:1px solid #eadbb3;border-radius:8px;background:#fff9e8}
 .offer__illustration img{display:block;width:100%;height:auto;max-height:155px;object-fit:contain}
+
+/* 見出しは黄色一色とし、指定されたお金の画像をFV内に配置。 */
+.fv h1,.fv h1 span{color:#ffdf16;-webkit-text-stroke:0;text-shadow:none}
+.fv__money{width:min(38%,220px);margin:0 auto 4%;padding:1%;border-radius:8px;background:#fff}
+.fv__money img{display:block;width:100%;height:auto;max-height:150px;object-fit:contain}
+
+/* CWで指定された帯・画像部分をプロミスカラーの青に統一。 */
+.campaign-banner{background:#064891;border-color:#064891}
+.campaign-banner__art{background:#fff;border-radius:8px}
+.campaign-banner__main{color:#fff}
+.campaign-banner__main strong,.campaign-banner__main em{color:#ffe15c}
+.campaign-banner__brand{background:#fff;color:#064891}
+.offer__illustration{background:#064891;border-color:#064891}
+.offer__illustration img{background:#fff;border-radius:6px}
+.offer__name{background:#064891}
