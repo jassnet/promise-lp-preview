@@ -104,3 +104,18 @@ body{margin:0;background:#f0f0f0;color:var(--ink);font-family:Meiryo,"Hiragino K
 .offer__illustration{background:#064891;border-color:#064891}
 .offer__illustration img{background:#fff;border-radius:6px}
 .offer__name{background:#064891}
+
+/* 帯・見出し・3つの特徴をまとめ、その下に横長の写真を配置。 */
+.fv__headline{position:relative;display:flex;align-items:center;justify-content:center;min-height:clamp(88px,24vw,178px);margin:2% 0 3%}
+.fv__icons{z-index:0;top:50%;transform:translateY(-50%);clip-path:inset(0 76% 0 0)}
+.fv .fv__headline h1{position:relative;z-index:1;width:64%;max-width:none;margin:0;font-size:clamp(26px,8vw,60px);line-height:1.18}
+.fv__money{position:absolute;z-index:1;right:0;top:50%;width:20%;margin:0;padding:1%;transform:translateY(-50%) rotate(-7deg);border-radius:8px;background:#fff}
+.fv__money img{max-height:none}
+.fv-photo{margin:0;padding:6% 3% 0}
+.fv-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+@media(max-width:360px){
+  .lp-header{padding-right:28px;font-size:12px;gap:.2em}
+  .fv__feature{position:relative}
+  .fv__feature i{position:absolute;top:5px;left:5px}
+  .fv__feature p{width:100%;text-align:center}
+}
