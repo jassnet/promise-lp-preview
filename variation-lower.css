@@ -65,3 +65,8 @@
 .lower-point h3 span{background:#ffd64a;color:#12396e}
 .lower-example h3{background:#12396e}
 .lower-footer a{color:#fff;text-underline-offset:3px}
+
+.operator-info{padding:7% 6%;background:#fff;text-align:left;color:#333;font-size:clamp(13px,2.6vw,16px);line-height:1.65}
+.operator-info h2{margin:0 0 1em;padding-bottom:.45em;border-bottom:2px solid #e8e8e8;color:#173e70;font-size:clamp(18px,4vw,24px)}
+.operator-info dl{margin:0}.operator-info dl div{display:grid;grid-template-columns:minmax(5.5em,28%) minmax(0,1fr);gap:.5em;padding:.6em 0;border-bottom:1px solid #ececec}
+.operator-info dt{font-weight:700}.operator-info dd{margin:0;overflow-wrap:anywhere}.operator-info p{margin:1.2em 0 0}.operator-info a{color:#174f91;text-underline-offset:3px}

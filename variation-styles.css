@@ -77,3 +77,15 @@ body{margin:0;background:#f0f0f0;color:var(--ink);font-family:Meiryo,"Hiragino K
 .fv h1{max-width:88%;font-size:clamp(34px,9.5vw,72px)}
 .fv h1 span{font:inherit;color:inherit;text-shadow:inherit;-webkit-text-stroke:inherit}
 @media(max-width:390px){.fv h1{font-size:clamp(32px,9.5vw,38px)}}
+
+/* 公式バナーを使わず、お金のイラストでご案内。 */
+.campaign-banner{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);align-items:center;gap:3%;padding:5%;border:2px solid #e9d49b;border-radius:12px;background:#fff9e8;color:#153a6d;text-align:left}
+.campaign-banner__art{display:block;min-width:0}
+.campaign-banner__art img{display:block;width:100%;height:auto}
+.campaign-banner__copy{display:block;min-width:0}
+.campaign-banner__small{display:inline-block;padding:.25em .5em;background:#ffdf55;color:#16365e;font-size:clamp(12px,2.8vw,20px)}
+.campaign-banner__main{display:block;padding:5% 0;color:#193d70;font-size:clamp(14px,3.2vw,24px)}
+.campaign-banner__main strong{font-size:1.25em;color:#d62d22}.campaign-banner__main em{color:#d62d22}
+.campaign-banner__brand{display:inline-block;margin:0;padding:.35em .9em;border-radius:20px;background:#155297;color:#fff;font-size:clamp(12px,2.5vw,17px)}
+.offer__illustration{display:grid;place-items:center;min-height:clamp(105px,24vw,160px);padding:4%;border:1px solid #eadbb3;border-radius:8px;background:#fff9e8}
+.offer__illustration img{display:block;width:100%;height:auto;max-height:155px;object-fit:contain}
