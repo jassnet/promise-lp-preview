@@ -70,3 +70,10 @@ body{margin:0;background:#f0f0f0;color:var(--ink);font-family:Meiryo,"Hiragino K
 .offer__bar{background:#fff7dc;color:#81552b;border:1px solid #edddb0}
 @media(max-width:390px){.fv__ribbon{font-size:clamp(15px,4.4vw,17px)}.fv h1{font-size:clamp(40px,11vw,44px)}.fv__feature i{font-size:12px}.button{font-size:clamp(17px,5vw,19px)}}
 @media(max-width:360px){.fv__break{display:block}}
+
+/* アプリ向けのファーストビュー。 */
+.fv{background:repeating-linear-gradient(137deg,#064891 0 86px,#0b5aae 86px 170px)}
+.fv::after{background:linear-gradient(120deg,#002d6822,transparent 48%,#4d93d222)}
+.fv h1{max-width:88%;font-size:clamp(34px,9.5vw,72px)}
+.fv h1 span{font:inherit;color:inherit;text-shadow:inherit;-webkit-text-stroke:inherit}
+@media(max-width:390px){.fv h1{font-size:clamp(32px,9.5vw,38px)}}
