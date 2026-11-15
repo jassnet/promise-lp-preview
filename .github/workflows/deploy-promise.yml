@@ -1,0 +1,44 @@
+name: Deploy Promise LP
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: promise-domain-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy through FTPS
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+          FTPS_USER: ${{ secrets.FTPS_USER }}
+          FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os, ssl
+          from ftplib import FTP_TLS
+
+          root = Path.cwd()
+          files = sorted(p for p in root.glob('variation*') if p.is_file())
+          source = root / 'variation.html'
+          if not source.is_file():
+              raise SystemExit('variation.html is missing')
+          files_to_send = [(p, p.name) for p in files] + [(source, 'index.html')]
+          with FTP_TLS(context=ssl.create_default_context(), timeout=60) as ftp:
+              ftp.connect(os.environ['FTPS_HOST'], 21)
+              ftp.login(os.environ['FTPS_USER'], os.environ['FTPS_PASSWORD'])
+              ftp.prot_p()
+              ftp.cwd('/public_html/tech-innovation2.com/lp/promise_1')
+              for path, name in files_to_send:
+                  temp = f'.{name}.upload'
+                  with path.open('rb') as stream:
+                      ftp.storbinary(f'STOR {temp}', stream)
+                  ftp.rename(temp, name)
+                  print(f'Published {name}')
+          PY
