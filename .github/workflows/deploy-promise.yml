@@ -34,7 +34,8 @@ jobs:
               ftp.connect(os.environ['FTPS_HOST'], 21)
               ftp.login(os.environ['FTPS_USER'], os.environ['FTPS_PASSWORD'])
               ftp.prot_p()
-              print('Current directory:', ftp.pwd()); print('Files:', ftp.nlst()); raise SystemExit(0)
+              if ftp.pwd() != '/' or not {'index.html', 'variation.html', 'variation-styles.css'}.issubset(set(ftp.nlst())):
+                  raise SystemExit('Unexpected FTPS directory')
               for path, name in files_to_send:
                   temp = f'.{name}.upload'
                   with path.open('rb') as stream:
