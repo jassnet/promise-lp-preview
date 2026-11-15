@@ -34,7 +34,7 @@ jobs:
               ftp.connect(os.environ['FTPS_HOST'], 21)
               ftp.login(os.environ['FTPS_USER'], os.environ['FTPS_PASSWORD'])
               ftp.prot_p()
-              ftp.cwd('/public_html/tech-innovation2.com/lp/promise_1')
+              print('Current directory:', ftp.pwd()); print('Files:', ftp.nlst()); raise SystemExit(0)
               for path, name in files_to_send:
                   temp = f'.{name}.upload'
                   with path.open('rb') as stream:
